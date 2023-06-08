@@ -1,19 +1,20 @@
 // Your code here
-    export default function FoodBox(food) {
+export default function FoodBox({food, onDelete}) {
+
 return (
-    <div>
-  <p>NAME</p>
+    <div key={food.id}>
+      <p>{food.name}</p>
 
-  <img src="IMAGE" />
+      <img style={{width: '250px'}} src={food.image} />
 
-  <p>Calories: CALORIES</p>
-  <p>Servings SERVINGS</p>
+      <p>Calories: CALORIES</p>
+      <p>Servings SERVINGS</p>
 
-  <p>
-    <b>Total Calories: SERVINGS * CALORIES </b> kcal
-  </p>
+      <p>
+        <b>Total Calories: SERVINGS * CALORIES </b> kcal
+      </p>
 
-  <button>Delete</button>
-</div>
+      <button onClick={() => onDelete(food.id)}>Delete</button>
+    </div>
 );
     }
